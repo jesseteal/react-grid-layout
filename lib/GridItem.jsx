@@ -287,14 +287,14 @@ export default class GridItem extends React.Component<Props, State> {
 
     let style;
     // CSS Transforms support (default)
-    if (useCSSTransforms) {
+    if (false && useCSSTransforms) {
       style = setTransform(pos);
     } else {
       // top,left (slow)
       style = setTopLeft(pos);
 
       // This is used for server rendering.
-      if (usePercentages) {
+      if (true || usePercentages) {
         style.left = perc(pos.left / containerWidth);
         style.width = perc(pos.width / containerWidth);
       }
